@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="KCE_logo.png">
+  <title>Stránka v údržbě</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-dark: #020617;
+      --bg-soft: #111827;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --accent: #4f46e5;
+      
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --border-subtle: rgba(148,163,184,0.15);
+      --shadow-soft: 0 18px 40px rgba(15,23,42,0.55);
+      
+      --radius-xl: 24px;
+      --max-width: 600px;
+      
+      font-family: "Staatliches", system-ui, sans-serif;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    
+    body{
+      margin:0;
+      background: radial-gradient(circle at top, var(--bg-soft) 0%, var(--bg-dark) 55%);
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    /* Hlavní karta */
+    .shell{
+      width:100%;
+      max-width: var(--max-width);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hlavička bez loga */
+    header.shell-head{
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(255,255,255,0.02);
+    }
+    
+    .title-wrapper h1{
+      margin:0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    .title-wrapper p{margin:0;font-size:1rem;color:var(--muted)}
+
+    /* Obsah */
+    .content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 34px 34px 10px 34px; /* Menší padding dole */
+      flex-grow: 1;
+    }
+
+    .msg h2{margin:0 0 12px 0; font-size:2.4rem; color: var(--accent);}
+    .msg p{margin:0 0 18px 0; color:var(--muted); font-size:1.1rem; line-height: 1.4;}
+    
+    /* GIF karta */
+    .gif-card{
+      width:100%;
+      max-width: 400px;
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      background: rgba(0,0,0,0.2);
+      border:1px solid var(--border-subtle);
+      margin-bottom: 1rem;
+    }
+    .gif-wrap{
+      width:100%;
+      border-radius: 16px;
+      overflow:hidden;
+      display:flex;
+    }
+    .gif-wrap img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    /* Nová patička s copyrightem */
+    .shell-foot {
+      padding: 15px;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width:600px){
+      .content{ padding:24px 18px;}
+      .msg h2{font-size:1.8rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell" role="main">
+    
+    <header class="shell-head">
+      <div class="title-wrapper">
+        <h1>Na stránce se aktivně pracuje</h1>
+        <p>Hopsa hejsa do Brandejsa a bude stránka hotová.</p>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="msg">
+        <h2>Na stránce se sktivně pracuje.</h2>
+        <p>Teda zas tak aktivně ne přeci jen jsme prumkaři.</p>
+      </div>
+
+      <aside class="gif-card" aria-label="Obrázek údržby">
+        <div class="gif-wrap">
+          <img src="weigel-cimrman.gif" alt="GIF údržby">
+        </div>
+      </aside>
+    </div>
+
+    <footer class="shell-foot">
+      © 2025 - Koalice českých engineerů - všechno je kladivo
+    </footer>
+
+  </div>
+</body>
+</html>

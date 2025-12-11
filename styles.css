@@ -1,0 +1,510 @@
+/* ============================================================
+   KOALICE ČESKÝCH ENGINEERŮ — FINÁLNÍ STYLE.CSS v2.0
+   Obsahuje: Navigaci, Dropdown, Projekty, Karty členů
+   ============================================================ */
+
+:root {
+    --bg: #050816;
+    --bg-glass: rgba(5, 8, 22, 0.85);
+    --text: #f9fafb;
+    --text-muted: #9ca3af;
+    --accent: #4f46e5;
+    --accent-glow: rgba(79, 70, 229, 0.5);
+    --radius-xl: 24px;
+    --radius-lg: 16px;
+    --shadow-soft: 0 18px 40px rgba(15,23,42,0.55);
+    --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.35);
+    --border-light: rgba(148, 163, 184, 0.15);
+}
+
+/* Reset box modelu */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at top, #111827 0%, #020617 55%);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================================
+   1. NAVIGACE (NEW)
+   ============================================================ */
+.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s, text-shadow 0.2s;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* --- Dropdown (Roletka) --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: " ▾";
+    font-size: 0.8em;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    background: #0f172a;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    list-style: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    
+    /* Animace */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+/* Zobrazení roletky při hoveru */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(79, 70, 229, 0.1);
+    color: var(--text);
+}
+
+/* ============================================================
+   2. HLAVNÍ OBSAH (LAYOUT)
+   ============================================================ */
+.landing {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero Sekce */
+.hero {
+    width: 100%;
+    max-width: 700px;
+    background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(2,6,23,0.1));
+    padding: 2rem 1rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.landing-logo {
+    display: block;
+    max-width: 140px;
+    height: auto;
+    margin: 0 auto 1rem auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.hero h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero .lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.hero-actions {
+    display: flex;
+    gap: 1rem;            /* Mezera mezi tlačítky */
+    margin-top: 2rem;     /* Odstup od textu */
+    justify-content: center;
+    flex-wrap: wrap;      /* Aby se na mobilu zalomila */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.95;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Specifické barvy */
+.btn-discord {
+    background-color: #5865F2; /* Oficiální Blurple barva */
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+}
+
+.btn-instagram {
+    /* Instagram gradient */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+}
+
+/* ============================================================
+   3. ČLENOVÉ (MEMBERS GRID)
+   ============================================================ */
+.members-section {
+    width: 100%;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.members-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.members-grid {
+    /* Reset list stylů */
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+
+    /* FLEXBOX PRO ZAROVNÁNÍ VEDLE SEBE */
+    display: flex;
+    flex-direction: row;       /* Řadit prvky do řádku */
+    flex-wrap: wrap;           /* Zalomení jen pokud se nevejdou (mobil) */
+    justify-content: center;   /* Vycentrovat celou skupinu */
+    align-items: stretch;      /* Stejná výška karet */
+    gap: 2rem;                 /* Mezera mezi kartami */
+    
+    width: 100%;
+    max-width: 1100px;         /* Dost místa pro 3 karty vedle sebe */
+}
+
+/* Položka seznamu */
+.members-grid > li {
+    display: flex;
+    justify-content: center;
+    /* Zrušíme jakékoliv odsazení shora, aby byly v rovině */
+    margin-top: 0 !important; 
+}
+
+/* Karta člena */
+.member-card {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    
+    /* Fixní šířka, aby byly karty stejně široké */
+    width: 300px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79,70,229,0.5);
+}
+
+/* Avatar a texty */
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid rgba(255,255,255,0.05);
+    background-color: #1f2937;
+}
+
+.member-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.member-name {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.member-role {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- RESPONZIVITA (MOBIL) --- */
+/* Na malých displejích se poskládají pod sebe */
+@media (max-width: 950px) {
+    .members-grid {
+        flex-direction: column; /* Pod sebe */
+        align-items: center;
+    }
+    
+    .member-card {
+        width: 100%;
+        max-width: 350px; /* Na mobilu trochu širší */
+    }
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79,70,229,0.5);
+}
+
+.member-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid rgba(255,255,255,0.05);
+    background-color: #1f2937;
+}
+
+.member-name {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.member-role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    display: block;
+}
+
+/* ============================================================
+   4. PROJEKTY (NEW GRID)
+   ============================================================ */
+.projects-section {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(15, 23, 42, 0.9);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+/* Status Labely */
+.status {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status.active { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.status.dev { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.status.finished { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1; /* Roztáhne text, aby tlačítka/chips byly dole */
+    margin-bottom: 1.5rem;
+}
+
+/* Chips / Tagy */
+.chips {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.chip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 99px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ============================================================
+   5. PATIČKA & RESPONSIVITA
+   ============================================================ */
+.landing-footer {
+    width: 100%;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: auto;
+}
+
+/* Error Pages Specifics */
+.error-card {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    margin-top: 2rem;
+    max-width: 600px;
+}
+.error-code { font-size: 4rem; color: var(--accent); margin: 0; font-weight: 800; }
+.btn-back {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.btn-back:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* Mobilní úpravy */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    .nav-link {
+        font-size: 0.85rem;
+    }
+    .hero h1 { font-size: 1.8rem; }
+    .dropdown-menu {
+        right: 50%;
+        transform: translateX(50%) translateY(10px);
+    }
+    .members-grid > li:nth-child(even) {
+        margin-top: 0; /* Zruší odskok na mobilu */
+    }
+}
