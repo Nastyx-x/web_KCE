@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projekty | KČE</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+      <div class="nav-container">
+          <a href="./" class="nav-logo">Koalice českých engineerů</a>
+          <ul class="nav-menu">
+              <li><a href="members.html" class="nav-link">Členové</a></li>
+              <li><a href="projects.html" class="nav-link active">Projekty</a></li> <li class="dropdown">
+                  <span class="nav-link dropdown-toggle">Další stránky</span>
+                  <ul class="dropdown-menu">
+                      <li><a href="wiki.html">Wiki / Dokumentace</a></li>
+                      <li><a href="gallery.html">Galerie bastlů</a></li>
+                      <li><a href="links.html">Server Status</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+  <main class="landing">
+    
+    <header class="hero" style="margin-bottom: 2rem;">
+      <h1>Katalog projektů</h1>
+      <p class="lead">
+        Detailní přehled toho, co jsme spáchali. Od funkčních prototypů až po slepé uličky vývoje.
+      </p>
+    </header>
+
+    <section class="projects-section">
+        <div class="projects-grid">
+<!--Tady je start karty pro článek o projektu-->
+            
+<a href="project-h2gp.html" class="project-card large-card">
+    
+    <img src="https://media.discordapp.net/attachments/1171542468305731644/1171542674317357126/IMG_20231107_205658.jpg" 
+         alt="H2GP Auto" 
+         class="card-img-top">
+    
+    <div class="project-content">
+        <div class="project-header">
+            <h3>H2GP - Vodíkové auto</h3>
+            <span class="status active">Active</span>
+        </div>
+        
+        <p>
+            Komplexní stavba modelu auta na vodíkový pohon. Ladění telemetrie a optimalizace spotřeby.
+        </p>
+        
+        <div class="chips">
+            <span class="chip">Vodík</span>
+            <span class="chip">Závody</span>
+        </div>
+
+        </div>
+</a>
+<!--Tady je konec karty pro článek o projektu-->
+
+<article class="project-card large-card" id="h2gp">
+    
+    <img src="https://media.discordapp.net/attachments/1171542468305731644/1171542674317357126/IMG_20231107_205658.jpg" 
+         alt="Meshtastic LoRa íť" 
+         class="card-img-top">
+    
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Meshtastic LoRa síť</h3>
+            <span class="status active">Active</span>
+        </div>
+        <p>
+            Stavba alternativní sítě pro komunikaci pomocí LoRa modulů bez závislosti na internetu.
+        </p>
+        
+        <div class="chips">
+            <span class="chip">Vodík</span>
+            <span class="chip">Závody</span>
+        </div>
+
+        <a href="project-meshtastic.html" class="btn-read-more">Otevřít celý článek -></a>
+    </div>
+</article>
+
+<article class="project-card large-card" id="h2gp">
+    
+    <img src="https://media.discordapp.net/attachments/1171542468305731644/1171542674317357126/IMG_20231107_205658.jpg" 
+         alt="H2GP Auto" 
+         class="card-img-top">
+    
+    <div class="project-content">
+        <div class="project-header">
+            <h3>H2GP - Vodíkové auto</h3>
+            <span class="status active">Active</span>
+        </div>
+        <p>
+            Komplexní stavba modelu auta na vodíkový pohon. Ladění telemetrie a optimalizace spotřeby.
+        </p>
+        
+        <div class="chips">
+            <span class="chip">Vodík</span>
+            <span class="chip">Závody</span>
+        </div>
+
+        <a href="project-h2gp.html" class="btn-read-more">Otevřít celý článek →</a>
+    </div>
+</article>
+
+    <footer class="landing-footer">
+      <p>© <span id="year"></span> Balthazar - KCE - Jsem vysokej jak drak.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

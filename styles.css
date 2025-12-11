@@ -508,3 +508,137 @@ body {
         margin-top: 0; /* Zruší odskok na mobilu */
     }
 }
+/* ============================================================
+   STRÁNKA PROJEKTŮ - SPECIFICKÉ STYLY
+   ============================================================ */
+
+/* Zvýraznění aktivního odkazu v menu */
+.nav-link.active {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Větší karty pro seznam projektů */
+.project-card.large-card {
+    min-height: 250px; /* Aby byly trochu vyšší */
+    background: rgba(15, 23, 42, 0.75); /* O trochu tmavší pozadí pro čitelnost */
+}
+
+/* Placeholder pro obrázek (šedý obdélník, než tam dáš fotky) */
+.project-image-placeholder {
+    width: 100%;
+    height: 180px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 1px dashed rgba(148, 163, 184, 0.3);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Detaily projektu (odrážky) */
+.project-details {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.project-details ul {
+    margin: 0;
+    padding-left: 1rem;
+    list-style: none;
+}
+
+.project-details li {
+    margin-bottom: 0.3rem;
+    color: var(--text-muted);
+}
+
+.project-details strong {
+    color: var(--text);
+    margin-right: 0.5rem;
+}
+
+/* ============================================================
+   OBRÁZKY V KARTÁCH & ČLÁNKY
+   ============================================================ */
+
+/* Styl pro obrázek uvnitř karty */
+.card-img-top {
+    width: 100%;
+    height: 200px;           /* Fixní výška, aby karty neuskakovaly */
+    object-fit: cover;       /* Ořízne fotku tak, aby vyplnila prostor a nedeformovala se */
+    border-radius: 12px;     /* Kulaté rohy */
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #0f172a;     /* Pozadí, kdyby se fotka nenačetla */
+}
+
+/* Větší výška obrázku na stránce Projects.html */
+.large-card .card-img-top {
+    height: 280px;
+}
+
+/* Tlačítko "Číst více" v kartě */
+.btn-read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+}
+
+.btn-read-more:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- STYLY PRO SAMOTNÝ ČLÁNEK (Detail) --- */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+}
+
+.article-header-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.article-content {
+    line-height: 1.8;
+    color: #cbd5e1; /* Světlejší šedá pro čtení */
+    font-size: 1.05rem;
+}
+
+.article-content h2 {
+    color: var(--text);
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.5rem;
+}
+
+.article-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-light);
+}
+
+
