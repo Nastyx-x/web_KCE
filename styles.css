@@ -383,6 +383,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    
+    /* TOTO PŘIDEJ: Zarovná karty na střed, i když je jich málo */
+    justify-content: center; 
 }
 
 .project-card {
@@ -414,6 +417,13 @@ body {
     margin: 0;
     font-size: 1.1rem;
     color: var(--text);
+}
+
+/* TOTO PŘIDEJ NAKONEC SEKCE PROJEKTŮ */
+a.project-card, .project-card a {
+    text-decoration: none; /* Zruší podtržení */
+    color: inherit;        /* Vezme si bílou barvu textu místo modré */
+    display: flex;         /* Udrží formátování karty */
 }
 
 /* Status Labely */
