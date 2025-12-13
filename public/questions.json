@@ -1,0 +1,248 @@
+{
+  "categories": [
+    {
+      "id": "history",
+      "title": "Historie",
+      "questions": [
+        {
+          "id": "1",
+          "value": 100,
+          "question": "Kdy vznikla Česká republika?",
+          "answer": "1. ledna 1993",
+          "bonus": false
+        },
+        {
+          "id": "2",
+          "value": 200,
+          "question": "Kdo byl prvním prezidentem České republiky?",
+          "answer": "Václav Havel",
+          "bonus": false
+        },
+        {
+          "id": "3",
+          "value": 300,
+          "question": "V jakém roce proběhla bitva na Bílé hoře?",
+          "answer": "1620",
+          "bonus": false
+        },
+        {
+          "id": "4",
+          "value": 400,
+          "question": "Kdo byl Karel IV.?",
+          "answer": "Římský císař a český král",
+          "bonus": false
+        },
+        {
+          "id": "5",
+          "value": 500,
+          "question": "Ve kterém roce skončila druhá světová válka?",
+          "answer": "1945",
+          "bonus": false
+        },
+        {
+          "id": "6",
+          "value": 1000,
+          "question": "V jakém roce byla vydána Zlatá bula sicilská?",
+          "answer": "1212",
+          "bonus": true
+        }
+      ]
+    },
+
+      {
+        "id": "history",
+        "title": "Historie",
+        "questions": [
+          {
+            "id": "7",
+            "value": 100,
+            "question": "Kdy vznikla Česká republika?",
+            "answer": "1. ledna 1993",
+            "bonus": false
+          },
+          {
+            "id": "8",
+            "value": 200,
+            "question": "Kdo byl prvním prezidentem České republiky?",
+            "answer": "Václav Havel",
+            "bonus": false
+          },
+          {
+            "id": "9",
+            "value": 300,
+            "question": "V jakém roce proběhla bitva na Bílé hoře?",
+            "answer": "1620",
+            "bonus": false
+          },
+          {
+            "id": "10",
+            "value": 400,
+            "question": "Kdo byl Karel IV.?",
+            "answer": "Římský císař a český král",
+            "bonus": false
+          },
+          {
+            "id": "11",
+            "value": 500,
+            "question": "Ve kterém roce skončila druhá světová válka?",
+            "answer": "1945",
+            "bonus": false
+          },
+          {
+            "id": "12",
+            "value": 1000,
+            "question": "V jakém roce byla vydána Zlatá bula sicilská?",
+            "answer": "1212",
+            "bonus": true
+          }
+        ]
+      },
+
+    {
+      "id": "history",
+      "title": "Historie",
+      "questions": [
+        {
+          "id": "13",
+          "value": 100,
+          "question": "Kdy vznikla Česká republika?",
+          "answer": "1. ledna 1993",
+          "bonus": false
+        },
+        {
+          "id": "14",
+          "value": 200,
+          "question": "Kdo byl prvním prezidentem České republiky?",
+          "answer": "Václav Havel",
+          "bonus": false
+        },
+        {
+          "id": "15",
+          "value": 300,
+          "question": "V jakém roce proběhla bitva na Bílé hoře?",
+          "answer": "1620",
+          "bonus": false
+        },
+        {
+          "id": "16",
+          "value": 400,
+          "question": "Kdo byl Karel IV.?",
+          "answer": "Římský císař a český král",
+          "bonus": false
+        },
+        {
+          "id": "17",
+          "value": 500,
+          "question": "Ve kterém roce skončila druhá světová válka?",
+          "answer": "1945",
+          "bonus": false
+        },
+        {
+          "id": "18",
+          "value": 1000,
+          "question": "V jakém roce byla vydána Zlatá bula sicilská?",
+          "answer": "1212",
+          "bonus": true
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "title": "Historie",
+      "questions": [
+        {
+          "id": "19",
+          "value": 100,
+          "question": "Kdy vznikla Česká republika?",
+          "answer": "1. ledna 1993",
+          "bonus": false
+        },
+        {
+          "id": "20",
+          "value": 200,
+          "question": "Kdo byl prvním prezidentem České republiky?",
+          "answer": "Václav Havel",
+          "bonus": false
+        },
+        {
+          "id": "21",
+          "value": 300,
+          "question": "V jakém roce proběhla bitva na Bílé hoře?",
+          "answer": "1620",
+          "bonus": false
+        },
+        {
+          "id": "22",
+          "value": 400,
+          "question": "Kdo byl Karel IV.?",
+          "answer": "Římský císař a český král",
+          "bonus": false
+        },
+        {
+          "id": "23",
+          "value": 500,
+          "question": "Ve kterém roce skončila druhá světová válka?",
+          "answer": "1945",
+          "bonus": false
+        },
+        {
+          "id": "24",
+          "value": 1000,
+          "question": "V jakém roce byla vydána Zlatá bula sicilská?",
+          "answer": "1212",
+          "bonus": true
+        }
+      ]
+    },
+
+    {
+      "id": "science",
+      "title": "Věda",
+      "questions": [
+        {
+          "id": "25",
+          "value": 100,
+          "question": "Jaká je chemická značka vody?",
+          "answer": "H₂O",
+          "bonus": false
+        },
+        {
+          "id": "26",
+          "value": 200,
+          "question": "Která planeta je nejblíže Slunci?",
+          "answer": "Merkur",
+          "bonus": false
+        },
+        {
+          "id": "27",
+          "value": 300,
+          "question": "Jaká je přibližná rychlost světla?",
+          "answer": "300 000 km/s",
+          "bonus": false
+        },
+        {
+          "id": "28",
+          "value": 400,
+          "question": "Co znamená zkratka DNA?",
+          "answer": "Deoxyribonukleová kyselina",
+          "bonus": false
+        },
+        {
+          "id": "29",
+          "value": 500,
+          "question": "Kdo je autorem teorie relativity?",
+          "answer": "Albert Einstein",
+          "bonus": false
+        },
+        {
+          "id": "30",
+          "value": 1000,
+          "question": "Kolik chromozomů má lidské tělo?",
+          "answer": "46",
+          "bonus": true
+        }
+      ]
+    }
+
+  ]
+}

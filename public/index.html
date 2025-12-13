@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Riskuj – Webová hra</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="top-bar">
+    <h1>Riskuj</h1>
+    <button id="resetGameBtn" class="btn danger">Restart hry</button>
+</header>
+
+<main class="game-layout">
+
+    <aside class="scoreboard">
+        <h2>Týmy</h2>
+        <div id="teams"></div>
+
+        <div class="scoreboard-actions">
+            <button id="addTeamBtn" class="btn secondary">+ Přidat tým</button>
+        </div>
+    </aside>
+
+    <section class="board-wrapper">
+        <div id="gameBoard" class="game-board"></div>
+    </section>
+
+</main>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <h3 id="modalCategory"></h3>
+        <p id="modalQuestion" class="question-text"></p>
+
+        <button id="showAnswerBtn" class="btn primary">Zobrazit odpověď</button>
+        <p id="modalAnswer" class="answer-text hidden"></p>
+
+        <div class="modal-actions">
+            <button id="correctBtn" class="btn success">Správně</button>
+            <button id="wrongBtn" class="btn danger">Špatně</button>
+            <button id="closeModalBtn" class="btn secondary">Zavřít</button>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
