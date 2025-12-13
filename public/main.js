@@ -18,6 +18,8 @@ async function init() {
     startTimer();
 }
 
+let modalMode = "question";
+
 /* ================= DATA ================= */
 
 async function loadQuestions() {
@@ -39,12 +41,12 @@ function createInitialState() {
     return {
         usedQuestions: {},
         teams: [
-            { id: crypto.randomUUID(), name: "Tým A", score: 0 },
-            { id: crypto.randomUUID(), name: "Tým B", score: 0 }
+            {id: crypto.randomUUID(), name: "Tým A", score: 0},
+            {id: crypto.randomUUID(), name: "Tým B", score: 0}
         ],
         activeTeamIndex: 0,
         elapsedSeconds: 0,
-        winnerGif: "https://media.tenor.com/jyQAUkmCdVwAAAAC/win-celebration.gif"
+        winnerGif: "nerdik12-twitch.gif"
     };
 }
 
@@ -120,7 +122,7 @@ function renderBoard() {
 
 function openQuestion(category, question) {
     if (state.usedQuestions[question.id]) return;
-    activeQuestion = { category, question };
+    activeQuestion = {category, question};
 
     document.getElementById("modalCategory").textContent = category.title;
     document.getElementById("modalQuestion").textContent = question.question;
@@ -282,8 +284,23 @@ window.removeTeam = index => {
 
 function bindEvents() {
     document.getElementById("showAnswerBtn").onclick = showAnswer;
-    document.getElementById("correctBtn").onclick = () => answer(true);
-    document.getElementById("wrongBtn").onclick = () => answer(false);
+
+    document.getElementById("correctBtn").onclick = () => {
+        if (modalMode === "question") {
+            answer(true);
+        } else if (modalMode === "restart") {
+            doRestart();
+        }
+    };
+
+    document.getElementById("wrongBtn").onclick = () => {
+        if (modalMode === "question") {
+            answer(false);
+        } else if (modalMode === "restart") {
+            closeModal();
+        }
+    };
+
     document.getElementById("closeModalBtn").onclick = closeModal;
 
     document.getElementById("addTeamBtn").onclick = () => {
@@ -299,6 +316,7 @@ function bindEvents() {
     document.getElementById("resetGameBtn").onclick = resetGame;
 }
 
+
 function resetModalButtons() {
     document.getElementById("showAnswerBtn").classList.remove("hidden");
     document.getElementById("correctBtn").classList.remove("hidden");
@@ -306,42 +324,37 @@ function resetModalButtons() {
 }
 
 function resetGame() {
+    modalMode = "restart";
+
     document.getElementById("modalCategory").textContent = "Restart hry";
     document.getElementById("modalQuestion").textContent =
         "Opravdu chcete restartovat celou hru?";
 
-    // skrýt věci, které nedávají smysl
     document.getElementById("modalAnswer").classList.add("hidden");
     document.getElementById("showAnswerBtn").classList.add("hidden");
-
-    // ⬇️ TOTO JE DŮLEŽITÉ
     document.getElementById("closeModalBtn").classList.add("hidden");
 
-    const yesBtn = document.getElementById("correctBtn");
-    const noBtn = document.getElementById("wrongBtn");
-
-    yesBtn.textContent = "Ano, restart";
-    noBtn.textContent = "Zrušit";
-
-    yesBtn.onclick = () => {
-        clearInterval(timerInterval);
-        state = createInitialState();
-        saveState();
-        renderBoard();
-        renderTeams();
-        renderTimer();
-        startTimer();
-        closeModal();
-
-        // po zavření vrátíme Zavřít zpět
-        document.getElementById("closeModalBtn").classList.remove("hidden");
-    };
-
-    noBtn.onclick = () => {
-        closeModal();
-        document.getElementById("closeModalBtn").classList.remove("hidden");
-    };
+    document.getElementById("correctBtn").textContent = "Ano, restart";
+    document.getElementById("wrongBtn").textContent = "Zrušit";
 
     document.getElementById("modal").classList.remove("hidden");
+}
+
+function doRestart() {
+    clearInterval(timerInterval);
+    state = createInitialState();
+    saveState();
+
+    modalMode = "question";
+
+    document.getElementById("correctBtn").textContent = "Správně";
+    document.getElementById("wrongBtn").textContent = "Špatně";
+    document.getElementById("closeModalBtn").classList.remove("hidden");
+
+    renderBoard();
+    renderTeams();
+    renderTimer();
+    startTimer();
+    closeModal();
 }
 
